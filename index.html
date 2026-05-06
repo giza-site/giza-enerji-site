@@ -1,100 +1,183 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giza Enerji</title>
-
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background:#0f172a;
-  color:white;
-}
-
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-h1 {
-  font-size:42px;
-  font-weight:bold;
-}
-
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:15px 25px;
-  background:#facc15;
-  color:black;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:10px;
-}
-
-.section {
-  background:white;
-  color:black;
-  padding:40px;
-  border-radius:20px;
-  margin-top:40px;
-}
-
-input {
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giza Enerji | Elektrik Faturası Analizi ve Enerji Danışmanlığı</title>
+  <meta name="description" content="Giza Enerji, işletmeler için elektrik faturası analizi, tedarikçi karşılaştırması ve aylık sabit ücretli enerji danışmanlığı hizmeti sunar." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #0f172a; }
+    a { text-decoration: none; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(15,23,42,.94); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav { max-width: 1150px; margin: auto; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand { color: #fff; font-weight: 900; font-size: 22px; letter-spacing: -.5px; }
+    .brand span { color: #facc15; }
+    .navlinks { display: flex; gap: 18px; font-size: 14px; }
+    .navlinks a { color: #cbd5e1; font-weight: 700; }
+    .navlinks a:hover { color: white; }
+    .hero { background: radial-gradient(circle at top right, rgba(250,204,21,.24), transparent 32%), #0f172a; color: white; }
+    .container { max-width: 1150px; margin: auto; padding: 70px 20px; }
+    .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; align-items: center; }
+    .badge { display: inline-block; background: rgba(250,204,21,.12); color: #fde68a; border: 1px solid rgba(250,204,21,.3); padding: 9px 14px; border-radius: 999px; font-weight: 800; font-size: 14px; margin-bottom: 18px; }
+    h1 { font-size: 52px; line-height: 1.05; margin: 0; letter-spacing: -1.6px; }
+    .lead { font-size: 19px; line-height: 1.7; color: #cbd5e1; max-width: 680px; }
+    .btn { display: inline-block; background: #facc15; color: #111827; padding: 15px 22px; border-radius: 14px; font-weight: 900; border: 0; cursor: pointer; box-shadow: 0 10px 22px rgba(0,0,0,.18); }
+    .btn.dark { background: #0f172a; color: white; }
+    .btn.outline { background: transparent; border: 1px solid rgba(255,255,255,.22); color: white; box-shadow: none; }
+    .hero-card { background: white; color: #0f172a; border-radius: 28px; padding: 28px; box-shadow: 0 24px 70px rgba(0,0,0,.3); }
+    .check { display: flex; align-items: center; gap: 10px; padding: 13px; background: #f8fafc; border-radius: 16px; margin-top: 10px; font-weight: 700; }
+    .check b { color: #16a34a; }
+    section.light { background: #f1f5f9; }
+    section.white { background: #fff; }
+    .section-title { font-size: 38px; margin: 0 0 12px; letter-spacing: -1px; }
+    .muted { color: #64748b; line-height: 1.7; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .card { background: white; padding: 28px; border-radius: 26px; box-shadow: 0 16px 40px rgba(15,23,42,.09); }
+    .card h3 { font-size: 22px; margin: 0 0 10px; }
+    .calculator { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+    .panel { background: #fff; padding: 26px; border-radius: 28px; box-shadow: 0 16px 45px rgba(15,23,42,.12); }
+    label { display: block; font-weight: 800; margin-top: 14px; }
+    input, textarea, select { width: 100%; padding: 14px; margin-top: 8px; border-radius: 14px; border: 1px solid #cbd5e1; font-size: 15px; outline: none; }
+    input:focus, textarea:focus, select:focus { border-color: #facc15; box-shadow: 0 0 0 3px rgba(250,204,21,.25); }
+    .result { background: #0f172a; color: white; border-radius: 22px; padding: 22px; margin-top: 18px; }
+    .result strong { font-size: 34px; display: block; margin-top: 6px; color: #facc15; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .step { background: #0f172a; color: white; padding: 22px; border-radius: 24px; }
+    .step span { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: #facc15; color: #0f172a; align-items: center; justify-content: center; font-weight: 900; margin-bottom: 14px; }
+    .cta { background: linear-gradient(135deg, #111827, #0f172a); color: white; }
+    .cta-box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 30px; padding: 34px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .footer { background: #020617; color: #94a3b8; text-align: center; padding: 28px 20px; font-size: 14px; }
+    .floating { position: fixed; right: 18px; bottom: 18px; z-index: 30; background: #22c55e; color: white; padding: 15px 18px; border-radius: 999px; font-weight: 900; box-shadow: 0 18px 42px rgba(0,0,0,.28); }
+    @media (max-width: 850px) {
+      .navlinks { display: none; }
+      .grid, .calculator, .cta-box { grid-template-columns: 1fr; }
+      .cards, .steps { grid-template-columns: 1fr; }
+      h1 { font-size: 38px; }
+      .container { padding: 48px 18px; }
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="container">
-  <h1>Elektrik faturanız gereğinden fazla olabilir.</h1>
-  <p>Giza Enerji olarak faturalarınızı analiz ediyor, maliyetlerinizi düşürüyoruz.</p>
-
-  <a class="btn" href="https://wa.me/905422368482" target="_blank">
-    Faturamı Gönder
-  </a>
-
-  <div class="section">
-    <h2>Fatura Hesaplama</h2>
-
-```
-<label>Tüketim (kWh)</label>
-<input id="kwh" type="number" placeholder="Örn: 1000">
-
-<label>Birim fiyat (TL)</label>
-<input id="price" type="number" placeholder="Örn: 3">
-
-<button class="btn" onclick="hesapla()">Hesapla</button>
-
-<h3 id="sonuc"></h3>
-```
-
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand">Giza <span>Enerji</span></div>
+      <div class="navlinks">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#hesaplama">Fatura Hesapla</a>
+        <a href="#surec">Süreç</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+      <a class="btn" href="https://wa.me/905422368482?text=Merhaba%2C%20elektrik%20faturam%C4%B1%20analiz%20ettirmek%20istiyorum.%20Ayl%C4%B1k%20faturam%3A%20___%20TL%20%C4%B0%C5%9Fletme%20t%C3%BCr%C3%BC%3A%20___" target="_blank">WhatsApp</a>
+    </div>
   </div>
-</div>
 
-<script>
-function hesapla(){
-  let kwh = document.getElementById(\"kwh\").value;
-  let price = document.getElementById(\"price\").value;
+  <header class="hero">
+    <div class="container grid">
+      <div>
+        <div class="badge">Aylık sabit ücretli enerji danışmanlığı</div>
+        <h1>Elektrik faturanızda gizli maliyetleri ortaya çıkarıyoruz.</h1>
+        <p class="lead">Giza Enerji, işletmelerin elektrik faturalarını analiz eder, birim maliyetleri karşılaştırır ve daha doğru tedarik seçenekleriyle enerji giderlerini kontrol altına almasına yardımcı olur.</p>
+        <a class="btn" href="#hesaplama">Faturamı Hesapla</a>
+        <a class="btn outline" href="https://wa.me/905422368482?text=Merhaba%2C%20elektrik%20faturam%C4%B1%20analiz%20ettirmek%20istiyorum." target="_blank">Ücretsiz Ön Analiz İste</a>
+      </div>
+      <div class="hero-card">
+        <h2>Faturanızı neden analiz ettirmelisiniz?</h2>
+        <div class="check"><b>✓</b> Gerçek TL/kWh maliyetinizi görürsünüz</div>
+        <div class="check"><b>✓</b> Tedarikçi tekliflerini daha doğru karşılaştırırsınız</div>
+        <div class="check"><b>✓</b> Gereksiz maliyetleri erken fark edersiniz</div>
+        <div class="check"><b>✓</b> Aylık sabit ücretle düzenli takip alırsınız</div>
+      </div>
+    </div>
+  </header>
 
-  let total = kwh * price;
+  <section id="hizmetler" class="light">
+    <div class="container">
+      <h2 class="section-title">Kurumsal enerji danışmanlığı</h2>
+      <p class="muted">İşletmenizin elektrik maliyetini tek seferlik değil, düzenli olarak takip ediyoruz.</p>
+      <div class="cards">
+        <div class="card"><h3>Fatura Analizi</h3><p class="muted">Enerji bedeli, dağıtım bedeli, vergi ve ek kalemleri ayrıştırarak gerçek maliyeti çıkarırız.</p></div>
+        <div class="card"><h3>Tedarikçi Karşılaştırması</h3><p class="muted">Mevcut birim fiyatınızı alternatif tedarik teklifleriyle karşılaştırırız.</p></div>
+        <div class="card"><h3>Aylık Takip</h3><p class="muted">Aylık sabit ücret modeliyle faturalarınızı düzenli kontrol eder, değişimleri raporlarız.</p></div>
+      </div>
+    </div>
+  </section>
 
-  document.getElementById(\"sonuc\").innerText =
-    \"Tahmini fatura: \" + total.toFixed(2) + \" TL\";
-}
-</script>
+  <section id="hesaplama" class="white">
+    <div class="container">
+      <h2 class="section-title">Elektrik faturası hesaplama</h2>
+      <p class="muted">Tüketim ve birim fiyatları girerek yaklaşık faturanızı ve ortalama maliyetinizi görün.</p>
+      <div class="calculator">
+        <div class="panel">
+          <label>Tüketim (kWh)</label>
+          <input id="kwh" type="number" placeholder="Örn: 10000" />
+          <label>Enerji Birim Bedeli (TL/kWh)</label>
+          <input id="energy" type="number" step="0.01" placeholder="Örn: 3.20" />
+          <label>Dağıtım Birim Bedeli (TL/kWh)</label>
+          <input id="distribution" type="number" step="0.01" placeholder="Örn: 1.95" />
+          <label>KDV (%)</label>
+          <input id="vat" type="number" step="1" value="20" />
+          <button class="btn dark" style="margin-top:18px" onclick="hesapla()">Hesapla</button>
+        </div>
+        <div class="panel">
+          <h3>Sonuç</h3>
+          <p class="muted">Hesaplama bilgilendirme amaçlıdır. Nihai tutar fatura kalemlerine göre değişebilir.</p>
+          <div class="result">
+            Tahmini Fatura
+            <strong id="total">0 TL</strong>
+            <div id="unit">Ortalama maliyet: 0 TL/kWh</div>
+          </div>
+          <a class="btn" style="margin-top:18px" href="https://wa.me/905422368482?text=Merhaba%2C%20elektrik%20faturam%C4%B1%20analiz%20ettirmek%20istiyorum.%20Faturam%C4%B1%20payla%C5%9Fmak%20istiyorum." target="_blank">Faturamı WhatsApp’tan Gönder</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="surec" class="light">
+    <div class="container">
+      <h2 class="section-title">Nasıl çalışıyoruz?</h2>
+      <div class="steps">
+        <div class="step"><span>1</span><h3>Faturanızı Gönderin</h3><p>PDF ya da fotoğraf olarak WhatsApp’tan paylaşın.</p></div>
+        <div class="step"><span>2</span><h3>Analiz Edelim</h3><p>Birim fiyatları ve toplam maliyeti ayrıştıralım.</p></div>
+        <div class="step"><span>3</span><h3>Teklifleri Karşılaştıralım</h3><p>Mevcut fiyatınızı alternatiflerle kıyaslayalım.</p></div>
+        <div class="step"><span>4</span><h3>Aylık Takip Edelim</h3><p>Sabit danışmanlık ücretiyle süreci düzenli izleyelim.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2 class="section-title">Faturanızı bugün inceleyelim.</h2>
+          <p class="lead">Aylık elektrik maliyetiniz yüksekse, ilk adım faturayı doğru okumaktır. Ön analiz için faturanızın fotoğrafını gönderin.</p>
+        </div>
+        <a class="btn" href="https://wa.me/905422368482?text=Merhaba%2C%20elektrik%20faturam%C4%B1%20analiz%20ettirmek%20istiyorum.%20Ayl%C4%B1k%20faturam%3A%20___%20TL%20%C4%B0%C5%9Fletme%20t%C3%BCr%C3%BC%3A%20___" target="_blank">WhatsApp’tan Gönder</a>
+      </div>
+    </div>
+  </section>
+
+  <a class="floating" href="https://wa.me/905422368482?text=Merhaba%2C%20elektrik%20faturam%C4%B1%20analiz%20ettirmek%20istiyorum." target="_blank">WhatsApp</a>
+
+  <footer class="footer">
+    <strong>Giza Enerji</strong><br />Elektrik faturası analizi, tedarik karşılaştırması ve aylık enerji danışmanlığı.
+  </footer>
+
+  <script>
+    function tl(n) {
+      return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(n || 0);
+    }
+    function hesapla() {
+      const kwh = parseFloat(document.getElementById('kwh').value) || 0;
+      const energy = parseFloat(document.getElementById('energy').value) || 0;
+      const distribution = parseFloat(document.getElementById('distribution').value) || 0;
+      const vat = parseFloat(document.getElementById('vat').value) || 0;
+      const subtotal = kwh * (energy + distribution);
+      const total = subtotal * (1 + vat / 100);
+      const unit = kwh > 0 ? total / kwh : 0;
+      document.getElementById('total').innerText = tl(total);
+      document.getElementById('unit').innerText = 'Ortalama maliyet: ' + unit.toFixed(2) + ' TL/kWh';
+    }
+  </script>
 </body>
 </html>
