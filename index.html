@@ -1,136 +1,267 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Giza Enerji | Elektrik Faturası Analizi</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giza Enerji | Enerji Danışmanlığı</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#fff;color:#07111f}
+a{text-decoration:none;color:inherit}
+
+.header{
+  height:92px;background:#07111f;color:white;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 42px;
+}
+.logo-wrap{display:flex;align-items:center;gap:18px}
+.logo-wrap img{height:58px}
+.logo-line{height:48px;width:1px;background:rgba(255,255,255,.45)}
+.logo-text{font-size:26px;font-weight:900;letter-spacing:.5px}
+.nav{display:flex;align-items:center;gap:34px;font-weight:700}
+.nav a{color:white;font-size:15px}
+.nav a.active{color:#f5c400;border-bottom:2px solid #f5c400;padding-bottom:10px}
+.nav .cta{background:#f5c400;color:#07111f;padding:14px 22px;border-radius:8px;font-weight:900}
+
+.hero{
+  position:relative;min-height:630px;text-align:center;overflow:hidden;
+  padding-top:90px;background:#fff;
+}
+.hero-content{position:relative;z-index:2}
+.hero h1{
+  font-size:72px;line-height:1.05;font-weight:900;
+  color:#07111f;letter-spacing:-2px;
+}
+.hero p{font-size:22px;color:#1f2937;margin-top:22px}
+.hero .btn{
+  display:inline-block;margin-top:35px;background:#f5c400;
+  color:#07111f;padding:18px 42px;border-radius:10px;
+  font-size:18px;font-weight:900;
+  box-shadow:0 14px 30px rgba(245,196,0,.35);
+}
+.pyramid-bg{
+  position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);
+  width:92%;max-width:1180px;opacity:.22;z-index:1;
 }
 
-body {
-    font-family: Arial, sans-serif;
+.services{
+  position:relative;z-index:3;background:#fff;
+  max-width:1180px;margin:0 auto;padding:40px 20px 50px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+}
+.service{
+  text-align:center;padding:0 28px;border-right:1px solid #e5e7eb;
+}
+.service:last-child{border-right:none}
+.icon{
+  width:86px;height:86px;margin:0 auto 18px;border-radius:50%;
+  background:#f8fafc;display:flex;align-items:center;justify-content:center;
+  font-size:42px;
+}
+.service h3{font-size:18px;margin-bottom:14px}
+.service p{font-size:15px;line-height:1.7;color:#475569}
+
+.about{
+  max-width:1120px;margin:0 auto 55px;
+  background:#f8fafc;border-radius:18px;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding:42px 54px;gap:50px;
+  box-shadow:0 10px 30px rgba(15,23,42,.06);
+}
+.about small{color:#f5b800;font-weight:900;letter-spacing:.5px}
+.about h2{font-size:34px;line-height:1.12;margin:12px 0 18px}
+.about p{color:#475569;line-height:1.8}
+.about .dark-btn{
+  display:inline-block;margin-top:22px;background:#07111f;color:white;
+  padding:14px 22px;border-radius:8px;font-weight:800;
+}
+.checks{border-left:1px solid #d9dee7;padding-left:48px}
+.check{
+  padding:16px 0;border-bottom:1px solid #d9dee7;
+  display:flex;align-items:center;gap:14px;font-weight:700
+}
+.check span{
+  width:25px;height:25px;border-radius:50%;background:#f5c400;
+  display:inline-flex;align-items:center;justify-content:center;
 }
 
-/* NAVBAR */
-.navbar {
-    background: #0f172a;
-    padding: 18px 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.refs{max-width:1120px;margin:0 auto 55px;text-align:center;padding:0 20px}
+.refs small{color:#f5b800;font-weight:900}
+.refs h2{font-size:34px;margin:8px 0 28px}
+.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:left}
+.ref-card{
+  background:#fff;border:1px solid #e5e7eb;border-radius:12px;
+  padding:28px;box-shadow:0 8px 20px rgba(15,23,42,.06)
 }
+.quote{font-size:36px;color:#f5c400;font-weight:900}
+.ref-card p{line-height:1.7;color:#334155;margin-bottom:18px}
+.person{font-weight:900}
+.role{font-size:13px;color:#64748b}
 
-.navbar img {
-    height: 40px;
+.footer{
+  background:#07111f;color:white;padding:45px 55px 20px;
 }
-
-.navbar span {
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
+.footer-grid{
+  max-width:1120px;margin:auto;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;
 }
+.footer img{height:54px}
+.footer h4{font-size:15px;margin-bottom:18px}
+.footer p,.footer a{display:block;color:#cbd5e1;font-size:14px;line-height:1.9}
+.copy{text-align:center;color:#94a3b8;font-size:13px;margin-top:35px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px}
 
-/* HERO */
-.hero {
-    position: relative;
-    height: 90vh;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-}
-
-/* PİRAMİT ARKA PLAN */
-.pyramid-bg {
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1200px;
-    opacity: 0.12; /* silik */
-    z-index: 1;
-}
-
-/* CONTENT */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-size: 60px;
-    color: #0f172a;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    color: #475569;
-    margin-bottom: 30px;
-}
-
-/* BUTTON */
-.btn {
-    background: #facc15;
-    color: black;
-    padding: 18px 35px;
-    border-radius: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18px;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .pyramid-bg {
-        width: 700px;
-    }
+@media(max-width:900px){
+  .header{height:auto;padding:20px;flex-direction:column;gap:20px}
+  .nav{flex-wrap:wrap;justify-content:center;gap:16px}
+  .hero{padding-top:55px;min-height:560px}
+  .hero h1{font-size:42px}
+  .hero p{font-size:17px}
+  .pyramid-bg{width:150%;bottom:0}
+  .services{grid-template-columns:1fr;gap:28px}
+  .service{border-right:none;border-bottom:1px solid #e5e7eb;padding-bottom:26px}
+  .about,.ref-grid,.footer-grid{grid-template-columns:1fr}
+  .about{padding:30px}
+  .checks{border-left:none;padding-left:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <img src="giza-01.png" alt="Logo">
-    <span>GIZA ENERJİ</span>
-</div>
+<header class="header">
+  <div class="logo-wrap">
+    <img src="giza-01.png" alt="Giza Enerji Logo">
+    <div class="logo-line"></div>
+    <div class="logo-text">GİZA ENERJİ</div>
+  </div>
 
-<!-- HERO -->
+  <nav class="nav">
+    <a class="active" href="#">Ana Sayfa</a>
+    <a href="#hizmetler">Hizmetlerimiz</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#">Blog</a>
+    <a href="#iletisim">İletişim</a>
+    <a class="cta" href="https://wa.me/905422368482?text=Merhaba,%20elektrik%20faturam%C4%B1%20%C3%BCcretsiz%20analiz%20ettirmek%20istiyorum." target="_blank">Ücretsiz Analiz Al</a>
+  </nav>
+</header>
+
 <section class="hero">
+  <img class="pyramid-bg" src="piramit.png" alt="Giza Piramitleri">
 
-    <!-- PİRAMİT -->
-    <img src="piramit.png" class="pyramid-bg">
+  <div class="hero-content">
+    <h1>Elektrik Faturanı<br>%30'a Kadar Düşür</h1>
+    <p>Uzman enerji danışmanlığı ile gereksiz maliyetleri ortadan kaldır</p>
+    <a class="btn" href="https://wa.me/905422368482?text=Merhaba,%20elektrik%20faturam%C4%B1%20%C3%BCcretsiz%20analiz%20ettirmek%20istiyorum." target="_blank">Ücretsiz Analiz Al</a>
+  </div>
+</section>
 
-    <!-- YAZI -->
-    <div class="hero-content">
-        <h1>Elektrik Faturanı %30'a Kadar Düşür</h1>
-        <p>Uzman enerji danışmanlığı ile gereksiz maliyetleri ortadan kaldır</p>
-        <a href="#" class="btn">Ücretsiz Analiz Al</a>
+<section id="hizmetler" class="services">
+  <div class="service">
+    <div class="icon">📋</div>
+    <h3>Fatura Analizi</h3>
+    <p>Elektrik faturalarınızı detaylı ele alıyor, tasarruf fırsatlarını belirliyoruz.</p>
+  </div>
+
+  <div class="service">
+    <div class="icon">⚖️</div>
+    <h3>Tedarikçi Karşılaştırma</h3>
+    <p>Piyasadaki tedarikçileri karşılaştırıyor, en uygun tarifeyi seçmenizi sağlıyoruz.</p>
+  </div>
+
+  <div class="service">
+    <div class="icon">☀️</div>
+    <h3>GES Danışmanlığı</h3>
+    <p>Güneş enerji sistemleri ile uzun vadeli ve sürdürülebilir tasarruf sağlıyoruz.</p>
+  </div>
+
+  <div class="service">
+    <div class="icon">📈</div>
+    <h3>Sürekli Destek</h3>
+    <p>Enerji maliyetlerinizi sürekli izliyor, size özel çözümler sunuyoruz.</p>
+  </div>
+</section>
+
+<section id="hakkimizda" class="about">
+  <div>
+    <small>NEDEN GİZA ENERJİ?</small>
+    <h2>Enerji maliyetlerinizi düşürmek için buradayız.</h2>
+    <p>Giza Enerji olarak, işletmenizin enerji giderlerini azaltmak için analiz, karşılaştırma ve danışmanlık hizmetleri sunuyoruz. Uzman ekibimiz ile maksimum tasarruf sağlıyoruz.</p>
+    <a class="dark-btn" href="#iletisim">Hakkımızda Daha Fazla ›</a>
+  </div>
+
+  <div class="checks">
+    <div class="check"><span>✓</span> %100 Tarafsız ve Güvenilir Danışmanlık</div>
+    <div class="check"><span>✓</span> Size Özel Tasarruf Raporları</div>
+    <div class="check"><span>✓</span> Güncel Piyasa Analizleri</div>
+    <div class="check"><span>✓</span> Uzman Ekiple Sürekli Destek</div>
+    <div class="check"><span>✓</span> Uzun Vadeli Maliyet Avantajı</div>
+  </div>
+</section>
+
+<section class="refs">
+  <small>MÜŞTERİLERİMİZ NE DİYOR?</small>
+  <h2>Referanslarımız</h2>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="quote">“</div>
+      <p>Giza Enerji sayesinde elektrik maliyetlerimizde ciddi tasarruf sağladık. Profesyonel ve hızlı bir ekip!</p>
+      <div class="person">Ahmet Yılmaz</div>
+      <div class="role">Fabrika Müdürü</div>
     </div>
 
+    <div class="ref-card">
+      <div class="quote">“</div>
+      <p>Tedarikçi değişikliği sürecini uçtan uca yönettiler. Hiçbir iş yükü yaşamadık.</p>
+      <div class="person">Mehmet Kaya</div>
+      <div class="role">İşletme Sahibi</div>
+    </div>
+
+    <div class="ref-card">
+      <div class="quote">“</div>
+      <p>GES yatırımımız konusunda aldığımız danışmanlık sayesinde kısa sürede kazanç sağladık.</p>
+      <div class="person">Burak Demir</div>
+      <div class="role">Yatırımcı</div>
+    </div>
+  </div>
 </section>
+
+<footer id="iletisim" class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="giza-01.png" alt="Giza Enerji Logo">
+      <h3>GİZA ENERJİ</h3>
+      <p>Enerji maliyetlerinizi azaltmak için uzman çözümler sunuyoruz.</p>
+    </div>
+
+    <div>
+      <h4>HIZLI LİNKLER</h4>
+      <a>Ana Sayfa</a>
+      <a>Hizmetlerimiz</a>
+      <a>Hakkımızda</a>
+      <a>Blog</a>
+      <a>İletişim</a>
+    </div>
+
+    <div>
+      <h4>HİZMETLERİMİZ</h4>
+      <a>Fatura Analizi</a>
+      <a>Tedarikçi Karşılaştırma</a>
+      <a>GES Danışmanlığı</a>
+      <a>Enerji Yönetimi</a>
+    </div>
+
+    <div>
+      <h4>İLETİŞİM</h4>
+      <p>📞 +90 542 236 84 82</p>
+      <p>✉️ info@gizaenerji.com.tr</p>
+      <p>📍 İstanbul, Türkiye</p>
+    </div>
+  </div>
+
+  <div class="copy">© 2026 Giza Enerji Danışmanlık. Tüm hakları saklıdır.</div>
+</footer>
 
 </body>
 </html>
