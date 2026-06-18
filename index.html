@@ -3,688 +3,245 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>Giza Enerji | Enerji Danışmanlığı</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:#f6f6f6;
-    color:#081225;
-}
-
-/* NAVBAR */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#f6f6f6;color:#081225}
+a{text-decoration:none}
 
 .navbar{
-    width:100%;
-    height:100px;
-    background:#020b1f;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 70px;
-
-    position:sticky;
-    top:0;
-    z-index:999;
+    width:100%;height:100px;background:#020b1f;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 70px;position:sticky;top:0;z-index:999;
 }
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.logo-area img{
-    width:58px;
-}
-
-.logo-divider{
-    width:1px;
-    height:48px;
-    background:rgba(255,255,255,0.3);
-}
-
-.logo-text{
-    color:white;
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:40px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:#f7c600;
-}
-
+.logo-area{display:flex;align-items:center;gap:18px}
+.logo-area img{width:58px}
+.logo-divider{width:1px;height:48px;background:rgba(255,255,255,.3)}
+.logo-text{color:white;font-size:22px;font-weight:800;letter-spacing:1px}
+.nav-links{display:flex;align-items:center;gap:40px}
+.nav-links a{color:white;font-weight:600}
+.nav-links a:hover{color:#f7c600}
 .cta-btn{
-    background:#f7c600;
-    color:#000;
-    padding:16px 26px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:800;
-    transition:0.3s;
+    background:#f7c600;color:#000!important;padding:16px 26px;
+    border-radius:12px;font-weight:800
 }
-
-.cta-btn:hover{
-    transform:translateY(-2px);
-}
-
-/* HERO */
 
 .hero{
-    position:relative;
-    overflow:hidden;
-
-    background:#f6f6f6;
-
-    min-height:90vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding-top:120px;
-    padding-bottom:120px;
-
-    text-align:center;
+    position:relative;overflow:hidden;background:#f6f6f6;
+    min-height:90vh;display:flex;align-items:center;justify-content:center;
+    padding:120px 20px;text-align:center;
 }
-
-/* Piramit */
-
 .hero-pyramid{
-    position:absolute;
-
-    width:88%;
-    max-width:1400px;
-
-    left:50%;
-    bottom:-90px;
-
-    transform:translateX(-50%);
-
-    opacity:0.10;
-
-    z-index:1;
+    position:absolute;width:92%;max-width:1500px;left:50%;bottom:-110px;
+    transform:translateX(-50%);opacity:.10;z-index:1
 }
-
-/* Hero içerik */
-
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-
+.hero-content{position:relative;z-index:2}
 .hero h1{
-    font-size:78px;
-    line-height:1;
-    font-weight:900;
-    color:#03112d;
-
-    letter-spacing:-4px;
-
-    text-shadow:0 6px 20px rgba(0,0,0,0.06);
-
-    margin-bottom:30px;
+    font-size:70px;line-height:1;font-weight:900;color:#03112d;
+    letter-spacing:-4px;margin-bottom:30px
 }
-
-.hero p{
-    font-size:20px;
-    color:#1d2b44;
-
-    margin-bottom:45px;
-}
-
+.hero p{font-size:20px;color:#1d2b44;margin-bottom:45px}
 .hero-button{
-    display:inline-block;
-
-    background:#f7c600;
-    color:#000;
-
-    padding:24px 52px;
-
-    border-radius:18px;
-
-    text-decoration:none;
-
-    font-size:28px;
-    font-weight:800;
-
-    box-shadow:0 12px 35px rgba(247,198,0,0.35);
-
-    transition:0.3s;
+    display:inline-block;background:#f7c600;color:#000;padding:24px 52px;
+    border-radius:18px;font-size:26px;font-weight:800;
+    box-shadow:0 12px 35px rgba(247,198,0,.35)
 }
-
-.hero-button:hover{
-    transform:translateY(-4px);
-}
-
-/* SERVICES */
 
 .services{
-    width:100%;
-    max-width:1300px;
-
-    margin:auto;
-
-    padding:60px 40px 100px;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
+    max-width:1300px;margin:auto;padding:80px 40px;
 }
-
+.section-title{text-align:center;margin-bottom:45px}
+.section-title small{color:#f7c600;font-weight:800}
+.section-title h2{font-size:44px;margin-top:10px}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
 .service-card{
-    background:white;
-    border-radius:24px;
-    padding:35px;
-
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    background:white;border-radius:24px;padding:38px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06)
 }
-
-.service-card img{
-    width:72px;
-    margin-bottom:20px;
-}
-
-.service-card h3{
-    font-size:24px;
-    margin-bottom:15px;
-    color:#081225;
-}
-
-.service-card p{
-    color:#555;
-    line-height:1.7;
-}
-
-/* ABOUT */
+.service-card h3{font-size:25px;margin-bottom:16px}
+.service-card p{color:#555;line-height:1.8}
+.service-card ul{margin-top:15px;padding-left:20px;color:#333;line-height:1.8}
 
 .about{
-    width:100%;
-    max-width:1300px;
-
-    margin:auto;
-
-    padding:0 40px 120px;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
+    max-width:1300px;margin:auto;padding:0 40px 100px;
 }
-
 .about-box{
-    background:white;
-    border-radius:24px;
-
-    padding:50px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    background:white;border-radius:24px;padding:55px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06)
 }
-
-.about-subtitle{
-    color:#f7c600;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
-.about h2{
-    font-size:48px;
-    line-height:1.1;
-
-    margin-bottom:25px;
-}
-
-.about p{
-    color:#555;
-    line-height:1.8;
-    margin-bottom:30px;
-}
-
-.about-btn{
-    display:inline-block;
-
-    background:#020b1f;
-    color:white;
-
-    padding:16px 28px;
-    border-radius:12px;
-
-    text-decoration:none;
-    font-weight:700;
-}
-
-.check-list{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-}
-
-.check-item{
-    display:flex;
-    align-items:center;
-    gap:14px;
-
-    font-size:18px;
-    color:#111;
-}
-
-.check-icon{
-    width:28px;
-    height:28px;
-
-    border-radius:50%;
-
-    background:#f7c600;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:900;
-}
-
-/* FOOTER */
+.about-subtitle{color:#f7c600;font-weight:800;margin-bottom:18px}
+.about h2{font-size:46px;line-height:1.1;margin-bottom:25px}
+.about p{color:#555;line-height:1.9;margin-bottom:18px}
 
 .footer{
-    background:#020b1f;
-    color:white;
-
-    padding:80px 70px;
+    background:#020b1f;color:white;padding:70px;
 }
-
 .footer-grid{
-    max-width:1300px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
+    max-width:1300px;margin:auto;
+    display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px
 }
-
-.footer-logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-    margin-bottom:25px;
-}
-
-.footer-logo img{
-    width:52px;
-}
-
-.footer-logo h3{
-    font-size:28px;
-}
-
-.footer p{
-    color:#c8d0dd;
-    line-height:1.8;
-}
-
-.footer h4{
-    margin-bottom:20px;
-    font-size:20px;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.footer-links a{
-    color:#c8d0dd;
-    text-decoration:none;
-}
-
+.footer-logo{display:flex;align-items:center;gap:15px;margin-bottom:25px}
+.footer-logo img{width:52px}
+.footer-logo h3{font-size:28px}
+.footer p,.footer a{color:#c8d0dd;line-height:1.9;display:block}
+.footer h4{margin-bottom:20px;font-size:20px}
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,0.08);
-
-    margin-top:60px;
-    padding-top:30px;
-
-    text-align:center;
-    color:#9ea8ba;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:50px;padding-top:25px;text-align:center;color:#9ea8ba
 }
 
-/* MOBILE */
-
-@media(max-width:1100px){
-
-.hero h1{
-    font-size:64px;
+@media(max-width:900px){
+    .navbar{height:auto;padding:20px;flex-direction:column;gap:20px}
+    .nav-links{flex-wrap:wrap;justify-content:center;gap:18px}
+    .hero h1{font-size:44px;letter-spacing:-2px}
+    .hero-button{font-size:20px;padding:18px 34px}
+    .hero-pyramid{width:150%;bottom:0}
+    .service-grid,.footer-grid{grid-template-columns:1fr}
+    .about-box{padding:32px}
 }
-
-.services{
-    grid-template-columns:1fr 1fr;
-}
-
-.about{
-    grid-template-columns:1fr;
-}
-
-.footer-grid{
-    grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:768px){
-
-.navbar{
-    padding:0 20px;
-    flex-direction:column;
-    height:auto;
-    gap:20px;
-    padding-top:20px;
-    padding-bottom:20px;
-}
-
-.nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-}
-
-.hero{
-    padding-top:90px;
-}
-
-.hero h1{
-    font-size:48px;
-}
-
-.hero-button{
-    font-size:20px;
-    padding:18px 34px;
-}
-
-.services{
-    grid-template-columns:1fr;
-    padding:40px 20px 70px;
-}
-
-.about{
-    padding:0 20px 80px;
-}
-
-.footer{
-    padding:60px 20px;
-}
-
-.footer-grid{
-    grid-template-columns:1fr;
-}
-
-.hero-pyramid{
-    width:130%;
-    bottom:40px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav class="navbar">
+    <div class="logo-area">
+        <img src="giza_only_logo.png" alt="Giza Enerji">
+        <div class="logo-divider"></div>
+        <div class="logo-text">GİZA ENERJİ</div>
+    </div>
 
-<div class="logo-area">
-
-<img src="giza_only_logo.png" alt="Giza Enerji">
-
-<div class="logo-divider"></div>
-
-<div class="logo-text">
-GİZA ENERJİ
-</div>
-
-</div>
-
-<div class="nav-links">
-
-<a href="#">Ana Sayfa</a>
-<a href="#">Hizmetlerimiz</a>
-<a href="#">Hakkımızda</a>
-<a href="#">Blog</a>
-<a href="#">İletişim</a>
-
-<a href="#" class="cta-btn">
-Ücretsiz Analiz Al
-</a>
-
-</div>
-
+    <div class="nav-links">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetlerimiz</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+        <a class="cta-btn" target="_blank" href="https://wa.me/905422368482?text=Merhaba,%20elektrik%20faturamı%20ücretsiz%20analiz%20ettirmek%20istiyorum.">Ücretsiz Analiz Al</a>
+    </div>
 </nav>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<img src="piramit.png" class="hero-pyramid" alt="Piramit">
-
-<div class="hero-content">
-
-<h1>
-Elektrik Faturanı<br>
-%30'a Kadar Düşür
-</h1>
-
-<p>
-Uzman enerji danışmanlığı ile gereksiz maliyetleri ortadan kaldır
-</p>
-
-<a href="#" class="hero-button">
-Ücretsiz Analiz Al
-</a>
-
-</div>
-
+<section id="anasayfa" class="hero">
+    <img src="piramit.png" class="hero-pyramid" alt="Piramit">
+    <div class="hero-content">
+        <h1>Elektrik Faturanı<br>%30'a Kadar Düşür</h1>
+        <p>Uzman enerji danışmanlığı ile gereksiz maliyetleri ortadan kaldır</p>
+        <a class="hero-button" target="_blank" href="https://wa.me/905422368482?text=Merhaba,%20elektrik%20faturamı%20ücretsiz%20analiz%20ettirmek%20istiyorum.">Ücretsiz Analiz Al</a>
+    </div>
 </section>
 
-<!-- SERVICES -->
+<section id="hizmetler" class="services">
+    <div class="section-title">
+        <small>HİZMETLERİMİZ</small>
+        <h2>Enerji piyasası süreçlerinde uçtan uca danışmanlık</h2>
+    </div>
 
-<section class="services">
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Üretim Tesisleri Operasyon Hizmetleri</h3>
+            <p>Elektrik piyasasında yatırımcıların tüm ticari süreçlerini uçtan uca yönetiyor, sürdürülebilir ve dijital bir operasyon yapısı kurmalarına destek oluyoruz.</p>
+            <ul>
+                <li>EPİAŞ kayıt ve TAKASBANK süreçleri</li>
+                <li>GÖP, EAK ve KGÜP bildirim yönetimi</li>
+                <li>İkili anlaşma satış sözleşmeleri</li>
+                <li>YEKDEM ve yerli katkı süreçleri</li>
+            </ul>
+        </div>
 
-<div class="service-card">
-<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
-<h3>Fatura Analizi</h3>
-<p>
-Elektrik faturalarınızı detaylı inceliyor, tasarruf fırsatlarını belirliyoruz.
-</p>
-</div>
+        <div class="service-card">
+            <h3>Lisanslama ve Kabul Danışmanlığı</h3>
+            <p>Elektrik üretim tesislerinden tedarik şirketlerine kadar tüm piyasa oyuncuları için lisanslama ve kabul süreçlerinde profesyonel destek sunuyoruz.</p>
+            <ul>
+                <li>EPDK bildirim süreçleri</li>
+                <li>Ön lisans ve lisans başvuruları</li>
+                <li>Şarj ağı, toplayıcılık ve tedarik lisansı</li>
+                <li>ETKB ön proje, kati proje ve kabul süreçleri</li>
+            </ul>
+        </div>
 
-<div class="service-card">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
-<h3>Tedarikçi Karşılaştırma</h3>
-<p>
-Piyasadaki en uygun tarifeleri karşılaştırıp avantajlı teklif sunuyoruz.
-</p>
-</div>
+        <div class="service-card">
+            <h3>YEK-G ve I-REC Sertifikasyon Hizmetleri</h3>
+            <p>Yenilenebilir enerji kaynak garanti belgeleri ve uluslararası I-REC sertifikaları için başvuru, süreç yönetimi, ticaret planlama ve satış analizi hizmetleri sunuyoruz.</p>
+            <ul>
+                <li>Sertifikasyon başvuru süreçleri</li>
+                <li>Sertifika ticaret planlaması</li>
+                <li>Satış ve piyasa analizi</li>
+                <li>Sürdürülebilirlik raporlama desteği</li>
+            </ul>
+        </div>
 
-<div class="service-card">
-<img src="https://cdn-icons-png.flaticon.com/512/3105/3105807.png">
-<h3>GES Danışmanlığı</h3>
-<p>
-Güneş enerjisi sistemlerinde uzun vadeli maliyet avantajı sağlıyoruz.
-</p>
-</div>
-
-<div class="service-card">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-<h3>Sürekli Destek</h3>
-<p>
-Enerji maliyetlerinizi sürekli takip ederek size özel çözümler üretiyoruz.
-</p>
-</div>
-
+        <div class="service-card">
+            <h3>Lisanssız Elektrik Üretim Tesisleri Operasyonel Destek</h3>
+            <p>Tüketim tesislerine bağlı lisanssız üretim tesislerinde yatırımcıların tüm operasyonel ihtiyaçlarını tek noktadan karşılıyoruz.</p>
+            <ul>
+                <li>Üretim ve sayaç verisi takibi</li>
+                <li>Mahsuplaşma süreç yönetimi</li>
+                <li>EPİAŞ ve dağıtım şirketi süreçleri</li>
+                <li>Mevzuata uygun operasyon yönetimi</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
-<!-- ABOUT -->
+<section id="hakkimizda" class="about">
+    <div class="about-box">
+        <div class="about-subtitle">HAKKIMIZDA</div>
+        <h2>13 yıllık sektör tecrübesiyle enerji piyasasında güvenilir çözüm ortağınız.</h2>
 
-<section class="about">
+        <p>Giza Enerji & Danışmanlık olarak 13 yıllık sektör tecrübemiz ve uzman ekibimiz ile elektrik piyasasının ticari ve operasyonel süreçlerinde faaliyet gösteriyoruz.</p>
 
-<div class="about-box">
+        <p>Lisanslama ve geçici kabul hizmetlerini de kapsayan faaliyetlerimiz; üretim tesisleri için üretim planlama ve operasyon süreçlerinden, elektrik tedarik ve toptan satış şirketleri için arka ve orta ofis süreçlerine kadar geniş bir alanı kapsamaktadır.</p>
 
-<div class="about-subtitle">
-NEDEN GİZA ENERJİ?
-</div>
+        <p>Şirketlerin dengesizlik yönetimi, ikili anlaşma alış-satış opsiyonlarının oluşturulması, müşteri ve risk yönetimi gibi alanlarda ticari kârlılığın artırılmasına destek oluyoruz.</p>
 
-<h2>
-Enerji maliyetlerinizi düşürmek için buradayız.
-</h2>
+        <p>Resmî Gazete, EPDK ve EPİAŞ’ta yayımlanan yönetmelik ve duyuruları günlük olarak takip ederek şirketlere raporluyor, mevzuat takibini eş zamanlı yürütüyoruz.</p>
 
-<p>
-Giza Enerji olarak işletmelerin elektrik giderlerini azaltıyor, en uygun tarifeleri ve enerji stratejilerini sunuyoruz.
-</p>
-
-<a href="#" class="about-btn">
-Hakkımızda
-</a>
-
-</div>
-
-<div class="about-box">
-
-<div class="check-list">
-
-<div class="check-item">
-<div class="check-icon">✓</div>
-%100 Tarafsız Danışmanlık
-</div>
-
-<div class="check-item">
-<div class="check-icon">✓</div>
-Size Özel Tasarruf Raporları
-</div>
-
-<div class="check-item">
-<div class="check-icon">✓</div>
-Güncel Piyasa Analizleri
-</div>
-
-<div class="check-item">
-<div class="check-icon">✓</div>
-Uzman Ekiple Sürekli Destek
-</div>
-
-<div class="check-item">
-<div class="check-icon">✓</div>
-Uzun Vadeli Maliyet Avantajı
-</div>
-
-</div>
-
-</div>
-
+        <p>Serbest tüketici kapsamındaki tüketim noktalarına tüketim danışmanlığı; üretim santrallerine ise I-REC ve YEK-G sertifikasyon süreçlerinin geliştirilmesi alanlarında hizmet sunuyoruz.</p>
+    </div>
 </section>
 
-<!-- FOOTER -->
+<footer id="iletisim" class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">
+                <img src="giza_only_logo.png" alt="Giza Enerji">
+                <h3>GİZA ENERJİ</h3>
+            </div>
+            <p>Enerji maliyetlerinizi azaltmak için profesyonel danışmanlık ve operasyonel destek çözümleri sunuyoruz.</p>
+        </div>
 
-<footer class="footer">
+        <div>
+            <h4>Hızlı Linkler</h4>
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#hizmetler">Hizmetlerimiz</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#iletisim">İletişim</a>
+        </div>
 
-<div class="footer-grid">
+        <div>
+            <h4>Hizmetlerimiz</h4>
+            <a href="#hizmetler">Üretim Tesisleri Operasyon</a>
+            <a href="#hizmetler">Lisanslama ve Kabul</a>
+            <a href="#hizmetler">YEK-G ve I-REC</a>
+            <a href="#hizmetler">Lisanssız Üretim Destek</a>
+        </div>
 
-<div>
+        <div>
+            <h4>İletişim</h4>
+            <a href="mailto:info@gizaenerji.com.tr">info@gizaenerji.com.tr</a>
+            <a href="tel:+905422368482">+90 542 236 84 82</a>
+            <a target="_blank" href="https://wa.me/905422368482">WhatsApp’tan Yazın</a>
+            <a>Ankara, Türkiye</a>
+        </div>
+    </div>
 
-<div class="footer-logo">
-
-<img src="giza_only_logo.png">
-
-<h3>GİZA ENERJİ</h3>
-
-</div>
-
-<p>
-Enerji maliyetlerinizi azaltmak için uzman çözümler sunuyoruz.
-</p>
-
-</div>
-
-<div>
-
-<h4>Hızlı Linkler</h4>
-
-<div class="footer-links">
-
-<a href="#">Ana Sayfa</a>
-<a href="#">Hizmetlerimiz</a>
-<a href="#">Hakkımızda</a>
-<a href="#">Blog</a>
-<a href="#">İletişim</a>
-
-</div>
-
-</div>
-
-<div>
-
-<h4>Hizmetlerimiz</h4>
-
-<div class="footer-links">
-
-<a href="#">Fatura Analizi</a>
-<a href="#">Tedarikçi Karşılaştırma</a>
-<a href="#">GES Danışmanlığı</a>
-<a href="#">Enerji Yönetimi</a>
-
-</div>
-
-</div>
-
-<div>
-
-<h4>İletişim</h4>
-
-<div class="footer-links">
-
-<a href="#">info@gizaenerji.com.tr</a>
-<a href="#">+90 542 236 84 82</a>
-<a href="#">Ankara, Türkiye</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 Giza Enerji Danışmanlık. Tüm hakları saklıdır.
-</div>
-
+    <div class="footer-bottom">
+        © 2026 Giza Enerji & Danışmanlık. Tüm hakları saklıdır.
+    </div>
 </footer>
 
 </body>
