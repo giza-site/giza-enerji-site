@@ -158,6 +158,26 @@
     display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13.5px;font-weight:600;
   }
 
+  /* ===== REFERANSLAR (müşteri logoları) ===== */
+  .references{background:#ffffff;padding:80px 24px;}
+  .ref-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:18px;
+  }
+  .ref-card{
+    background:#fff;border:1px solid var(--border);border-radius:12px;
+    height:100px;display:flex;align-items:center;justify-content:center;
+    padding:16px;transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .ref-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .ref-card img{
+    max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain;
+    filter:grayscale(1);opacity:.72;
+    transition:filter .2s ease, opacity .2s ease;
+  }
+  .ref-card:hover img{filter:grayscale(0);opacity:1;}
+  @media(max-width:980px){ .ref-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:600px){ .ref-grid{grid-template-columns:repeat(2,1fr);} }
+
   /* ===== SERVICES ===== */
   .services{background:#ffffff;}
   .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
@@ -316,10 +336,34 @@
   <div class="trust-inner">
     <div class="placeholder-item">🏛️ <span class="badge-note">EPDK Yetki/Lisans No: XXXXXX</span></div>
     <div class="placeholder-item">📍 <span class="badge-note">MERSİS / Ticaret Sicil No</span></div>
-    <div class="placeholder-item">🤝 <span class="badge-note">Referans müşteri logoları buraya</span></div>
     <div class="placeholder-item">⭐ <span class="badge-note">Google Business değerlendirme puanı</span></div>
   </div>
 </div>
+
+<!-- ============ REFERANSLAR ============ -->
+<section class="references" id="referanslar">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Referanslarımız</span>
+      <h2>Bizi Tercih Eden Kurumlar</h2>
+      <p>Farklı sektörlerden şirketler enerji maliyetlerini yönetmek için bize güveniyor.</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card"><img src="ref-cankaya.png" alt="Çankaya Katı Atık" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-tuncdokum.png" alt="Tunç Döküm" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-kartaloksit.png" alt="Kartal Oksit A.Ş." loading="lazy"></div>
+      <div class="ref-card"><img src="ref-canlarboru.png" alt="Canlar Boru" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-ankaralider.png" alt="Ankaralider Plastik & Ambalaj" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-ayrinti.png" alt="Ayrıntı Basımevi" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-kartalmetal.png" alt="Kartal Metal Galvaniz" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-topuz.png" alt="Topuz Plastik" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-ayse.png" alt="Ay-Se Metal Makina Model Döküm" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-tetikpet.png" alt="Tetik Pet Plastik" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-varol.png" alt="Varol Plastik" loading="lazy"></div>
+      <div class="ref-card"><img src="ref-zeysicam.png" alt="Zeysi Cam" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ SERVICES ============ -->
 <section class="services" id="hizmetler">
